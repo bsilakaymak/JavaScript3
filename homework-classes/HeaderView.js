@@ -10,7 +10,7 @@
       this.fetchData = fetchData;
       this.select = null;
     }
-
+   
     update(state) {
       if (!this.select && !state.error) {
         this.render(state.repos);
@@ -23,7 +23,7 @@
      * @param {Object[]} repos An array of repository objects.
      */
     render(repos) {
-      createAndAppend('div', this.header, { text: this.account.name });
+      createAndAppend('div', this.header, { text: this.account.name, class: 'header-text'});
       this.select = createAndAppend('select', this.header, {
         class: 'repo-select',
         autofocus: 'autofocus',
